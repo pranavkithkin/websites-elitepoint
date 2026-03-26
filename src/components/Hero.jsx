@@ -21,13 +21,20 @@ export default function Hero() {
 
   return (
     <section ref={containerRef} className="relative h-[100dvh] w-full flex items-end pb-16 md:pb-24 px-6 md:px-16 overflow-hidden">
-      {/* Background GIF */}
+      {/* Background Video — WebM/MP4 (converted from GIF for 95% smaller file) */}
       <div className="absolute inset-0 z-0">
-        <img
-          src="/hero-bg.gif"
-          alt="Elite Point Background"
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          poster="/hero-poster.jpg"
           className="w-full h-full object-cover"
-        />
+          preload="auto"
+        >
+          <source src="/hero-bg.webm" type="video/webm" />
+          <source src="/hero-bg.mp4" type="video/mp4" />
+        </video>
         <div className="absolute inset-0 bg-gradient-to-t from-obsidian via-obsidian/70 to-obsidian/20"></div>
         <div className="absolute inset-0 bg-obsidian/40 mix-blend-multiply"></div>
       </div>
