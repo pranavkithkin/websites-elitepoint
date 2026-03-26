@@ -12,7 +12,7 @@ export default function Footer() {
           {/* Brand Col */}
           <div className="md:col-span-2 flex flex-col items-start gap-6">
             <Link to="/" className="flex items-center gap-3">
-              <img src="/logo_8k_transparent_clean.png" alt="Elite Point Logo" className="h-14 w-auto object-contain" />
+              <img src="/logo.png" alt="Elite Point Logo" className="h-14 w-auto object-contain" />
               <div className="flex flex-col">
                 <span className="font-semibold tracking-tight text-xl text-ivory leading-tight">ELITE POINT</span>
                 <span className="text-xs font-mono text-champagne">CORPORATE SERVICES</span>

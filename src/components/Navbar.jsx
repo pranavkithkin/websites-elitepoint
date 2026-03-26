@@ -69,7 +69,7 @@ export default function Navbar() {
         >
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2">
-            <img src="/logo_8k_transparent_clean.png" alt="Elite Point Logo" className="h-9 w-auto object-contain" />
+            <img src="/logo.png" alt="Elite Point Logo" className="h-9 w-auto object-contain" />
             <span className="font-semibold tracking-tight text-base mt-1 hidden sm:block text-ivory">ELITE POINT</span>
           </Link>
 
