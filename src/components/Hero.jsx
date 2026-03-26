@@ -20,7 +20,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section ref={containerRef} className="relative h-[100dvh] w-full flex items-end pb-24 px-6 md:px-16 overflow-hidden">
+    <section ref={containerRef} className="relative h-[100dvh] w-full flex items-end pb-16 md:pb-24 px-6 md:px-16 overflow-hidden">
       {/* Background GIF */}
       <div className="absolute inset-0 z-0">
         <img
@@ -34,15 +34,15 @@ export default function Hero() {
 
       <div ref={textRef} className="relative z-10 w-full max-w-5xl mx-auto flex flex-col items-start gap-4">
         <h1 className="flex flex-col gap-1 tracking-tight">
-          <span className="hero-element font-sans font-bold text-3xl md:text-5xl lg:text-6xl uppercase tracking-tighter text-ivory/90">
+          <span className="hero-element font-sans font-bold text-2xl md:text-5xl lg:text-6xl uppercase tracking-tighter text-ivory/90">
             Precision structuring meets
           </span>
-          <span className="hero-element font-serif italic text-6xl md:text-8xl lg:text-[140px] leading-[0.85] text-champagne pr-4">
+          <span className="hero-element font-serif italic text-5xl md:text-8xl lg:text-[140px] leading-[0.85] text-champagne pr-4">
             Flawless execution.
           </span>
         </h1>
         
-        <p className="hero-element text-lg md:text-xl text-ivory/70 max-w-lg mt-4 font-light">
+        <p className="hero-element text-base md:text-xl text-ivory/70 max-w-lg mt-4 font-light">
           We architect and scale premium business entities with uncompromising clarity and compliance.
         </p>
 

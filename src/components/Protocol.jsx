@@ -111,21 +111,21 @@ export default function Protocol() {
         >
           <div 
             ref={el => innerCardsRef.current[i] = el}
-            className="w-full max-w-6xl h-[80vh] bg-slate/50 backdrop-blur-md rounded-[3rem] border border-white/5 relative overflow-hidden flex flex-col md:flex-row shadow-2xl"
+            className="w-full max-w-6xl min-h-[70vh] md:h-[80vh] bg-slate/50 backdrop-blur-md rounded-[2rem] md:rounded-[3rem] border border-white/5 relative overflow-hidden flex flex-col md:flex-row shadow-2xl"
           >
             
             {/* Visual Half */}
-            <div className="w-full md:w-1/2 h-48 md:h-full bg-obsidian/50 relative overflow-hidden flex items-center justify-center">
+            <div className="w-full md:w-1/2 h-36 md:h-full bg-obsidian/50 relative overflow-hidden flex items-center justify-center">
               {step.svgType === 'geom' && <RotatingGeometric />}
               {step.svgType === 'scan' && <ScanningLaser />}
               {step.svgType === 'pulse' && <PulsingEKG />}
             </div>
 
             {/* Content Half */}
-            <div className="w-full md:w-1/2 p-8 md:p-16 flex flex-col justify-center">
-              <span className="font-mono text-champagne text-4xl block mb-6">{step.num}</span>
-              <h3 className="font-sans font-bold text-3xl md:text-5xl text-ivory tracking-tight mb-6">{step.title}</h3>
-              <p className="font-sans text-ivory/70 text-lg md:text-xl leading-relaxed max-w-md">
+            <div className="w-full md:w-1/2 p-6 md:p-16 flex flex-col justify-center">
+              <span className="font-mono text-champagne text-2xl md:text-4xl block mb-4">{step.num}</span>
+              <h3 className="font-sans font-bold text-2xl md:text-5xl text-ivory tracking-tight mb-4">{step.title}</h3>
+              <p className="font-sans text-ivory/70 text-base md:text-xl leading-relaxed max-w-md">
                 {step.desc}
               </p>
             </div>

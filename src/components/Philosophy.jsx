@@ -58,7 +58,7 @@ export default function Philosophy() {
   const line2 = "We focus on: strategic scaling.".split(' ');
 
   return (
-    <section id="philosophy" ref={containerRef} className="relative py-48 px-6 md:px-16 overflow-hidden bg-obsidian">
+    <section id="philosophy" ref={containerRef} className="relative py-24 md:py-48 px-6 md:px-16 overflow-hidden bg-obsidian">
       {/* Background Parallax Texture */}
       <div className="absolute inset-0 z-0 opacity-20 pointer-events-none" style={{ overflow: 'hidden' }}>
         <img 
@@ -79,7 +79,7 @@ export default function Philosophy() {
           ))}
         </h3>
         
-        <h2 ref={text2Ref} className="text-5xl md:text-8xl lg:text-[110px] leading-[0.9] font-serif italic text-ivory tracking-tight flex flex-wrap gap-x-4 gap-y-2">
+        <h2 ref={text2Ref} className="text-4xl md:text-8xl lg:text-[110px] leading-[0.9] font-serif italic text-ivory tracking-tight flex flex-wrap gap-x-4 gap-y-2">
           {line2.map((w, i) => {
             const isAccent = w.toLowerCase().includes('scaling');
             return (

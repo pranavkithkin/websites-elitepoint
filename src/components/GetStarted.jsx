@@ -61,12 +61,12 @@ function BookingModal({ onClose }) {
 
   return (
     <div
-      className="fixed inset-0 z-[100] flex items-center justify-center p-4"
+      className="fixed inset-0 z-[100] flex items-end sm:items-center justify-center p-0 sm:p-4"
       style={{ backgroundColor: 'rgba(0,0,0,0.75)', backdropFilter: 'blur(8px)' }}
       onClick={(e) => { if (e.target === e.currentTarget) onClose(); }}
     >
       <div
-        className="relative w-full max-w-lg bg-[#13131a] border border-white/10 rounded-[2rem] shadow-2xl overflow-hidden"
+        className="relative w-full max-w-lg bg-[#13131a] border border-white/10 rounded-[2rem] shadow-2xl overflow-hidden max-h-[90vh] overflow-y-auto"
         style={{ animation: 'modal-in 0.35s cubic-bezier(0.34,1.56,0.64,1) both' }}
       >
         {/* Close */}

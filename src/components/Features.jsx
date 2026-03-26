@@ -26,7 +26,7 @@ function DiagnosticShuffler() {
   }, []);
 
   return (
-    <div className="relative h-80 w-full flex items-start justify-center bg-[#0a0a0d] border border-white/10 p-6 rounded-[2rem] shadow-2xl overflow-hidden mt-0">
+    <div className="relative min-h-[16rem] w-full flex items-start justify-center bg-[#0a0a0d] border border-white/10 p-6 rounded-[2rem] shadow-2xl overflow-hidden mt-0">
       {cards.map((card, idx) => {
         const isTop = idx === 0;
         const isMid = idx === 1;
@@ -101,7 +101,7 @@ function ComplianceChecklist() {
   }, []);
 
   return (
-    <div className="h-80 w-full bg-[#0a0a0d] border border-white/10 p-6 rounded-[2rem] flex flex-col shadow-2xl overflow-hidden">
+    <div className="min-h-[16rem] w-full bg-[#0a0a0d] border border-white/10 p-6 rounded-[2rem] flex flex-col shadow-2xl overflow-hidden">
       {/* Header */}
       <div className="flex items-center justify-between border-b border-white/10 pb-4 mb-5">
         <div className="flex items-center gap-2">
@@ -190,7 +190,7 @@ function ServiceTimeline() {
   }, []);
 
   return (
-    <div ref={containerRef} className="h-80 w-full bg-[#0a0a0d] border border-white/10 p-6 rounded-[2rem] shadow-2xl relative overflow-hidden flex flex-col items-center justify-center gap-8">
+    <div ref={containerRef} className="min-h-[16rem] w-full bg-[#0a0a0d] border border-white/10 p-6 rounded-[2rem] shadow-2xl relative overflow-hidden flex flex-col items-center justify-center gap-8">
       {/* Milestone row */}
       <div>
         <p className="text-xs font-mono text-ivory/40 uppercase tracking-widest mb-4 text-center">Delivery Timeline</p>
