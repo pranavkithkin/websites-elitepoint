@@ -21,16 +21,32 @@ export default function Hero() {
 
   return (
     <section ref={containerRef} className="relative h-[100dvh] w-full flex items-end pb-16 md:pb-24 px-6 md:px-16 overflow-hidden">
-      {/* Background Video — WebM/MP4 (converted from GIF for 95% smaller file) */}
+      {/* Background Video: 109KB on mobile, WebM/MP4 on desktop */}
       <div className="absolute inset-0 z-0">
         <video
+          ref={el => {
+            if (!el) return;
+            // Serve tiny mobile video on small screens
+            const isMobile = window.matchMedia('(max-width: 768px)').matches;
+            const src = isMobile ? '/hero-bg-mobile.mp4' : null;
+            if (isMobile && el.querySelector('source[data-mobile]') === null) {
+              const sources = el.querySelectorAll('source');
+              sources.forEach(s => s.remove());
+              const s = document.createElement('source');
+              s.src = '/hero-bg-mobile.mp4';
+              s.type = 'video/mp4';
+              s.dataset.mobile = '1';
+              el.appendChild(s);
+              el.load();
+            }
+          }}
           autoPlay
           muted
           loop
           playsInline
           poster="/hero-poster.jpg"
           className="w-full h-full object-cover"
-          preload="auto"
+          preload="metadata"
         >
           <source src="/hero-bg.webm" type="video/webm" />
           <source src="/hero-bg.mp4" type="video/mp4" />
