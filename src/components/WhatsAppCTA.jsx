@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 export default function WhatsAppCTA() {
   const [isHovered, setIsHovered] = useState(false);
-  const phoneNumber = "971500000000"; // Replace with actual Elite Point WhatsApp number
+  const phoneNumber = "971551741271";
   const message = encodeURIComponent("Hello Elite Point, I would like to inquire about your corporate services.");
 
   return (

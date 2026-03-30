@@ -126,7 +126,7 @@ function Jurisdictions() {
       <div className="w-full">
         <LogoLoop
           logos={logoItems}
-          speed={35}
+          speed={50}
           direction="left"
           gap={20}
           logoHeight={200}
@@ -147,14 +147,13 @@ function ProcessStrip() {
   useEffect(() => {
     const ctx = gsap.context(() => {
       gsap.from('.proc-step', {
-        x: 40,
-        opacity: 0,
-        duration: 0.7,
-        stagger: 0.12,
-        ease: 'power2.out',
+        y: 60,
+        duration: 0.8,
+        stagger: 0.15,
+        ease: 'power3.out',
         scrollTrigger: {
           trigger: ref.current,
-          start: 'top 80%',
+          start: 'top 85%',
         }
       });
     }, ref);
@@ -162,26 +161,42 @@ function ProcessStrip() {
   }, []);
 
   const steps = [
-    { n: '01', t: 'Consult', d: 'Free discovery call to map your business goals.' },
-    { n: '02', t: 'Structure', d: 'We recommend the optimal entity and jurisdiction.' },
-    { n: '03', t: 'Submit', d: 'We handle every document, authority, and approval.' },
-    { n: '04', t: 'Operate', d: 'Your company is live — bank account, visa, ID ready.' },
+    { n: '01', t: 'Consult', d: 'Free discovery call to map your business goals.', img: '/images/process/corp_consult.png' },
+    { n: '02', t: 'Structure', d: 'We recommend the optimal entity and jurisdiction.', img: '/images/process/corp_structure.png' },
+    { n: '03', t: 'Submit', d: 'We handle every document, authority, and approval.', img: '/images/process/corp_submit.png' },
+    { n: '04', t: 'Operate', d: 'Your company is live — bank account, visa, ID ready.', img: '/images/process/corp_operate.png' },
   ];
 
   return (
-    <section ref={ref} className="py-28 px-6 md:px-16 bg-[#0a0a0e] relative z-10">
-      <div className="max-w-6xl mx-auto">
-        <p className="text-xs font-mono text-champagne uppercase tracking-widest mb-14 text-center">Our Process — From Idea to Operation</p>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 relative">
-          {/* connecting line — desktop only */}
-          <div className="absolute top-5 left-[10%] right-[10%] h-px bg-gradient-to-r from-transparent via-champagne/20 to-transparent hidden lg:block pointer-events-none" />
+    <section ref={ref} className="py-32 px-6 md:px-16 bg-[#0a0a0e] relative z-10 overflow-hidden">
+      <div className="max-w-[1400px] mx-auto">
+        <p className="text-[10px] font-mono text-champagne/80 uppercase tracking-widest mb-16 text-center">Our Process — From Idea to Operation</p>
+        
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 relative">
           {steps.map((s, i) => (
-            <div key={i} className="proc-step flex flex-col items-start gap-4 relative">
-              <div className="w-10 h-10 rounded-full bg-obsidian border border-champagne/30 flex items-center justify-center">
-                <span className="font-mono text-xs text-champagne">{s.n}</span>
+            <div key={i} className="proc-step group relative overflow-hidden rounded-[2rem] border border-white/5 bg-[#0e0e12] h-[400px] flex flex-col justify-end p-8 isolate transition-all duration-500 hover:border-champagne/30">
+              
+              {/* Background Glow/Image */}
+              <div className="absolute inset-0 transition-transform duration-[1.5s] ease-out group-hover:scale-110">
+                <img 
+                  src={s.img} 
+                  alt={s.t}
+                  className="w-full h-full object-cover object-center opacity-80 group-hover:opacity-100 transition-opacity duration-500"
+                />
               </div>
-              <h3 className="font-bold text-ivory text-xl">{s.t}</h3>
-              <p className="text-ivory/50 text-sm leading-relaxed">{s.d}</p>
+              
+              {/* Gradient Overlay to ensure text readability */}
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0e] via-[#0a0a0e]/80 to-transparent z-10 pointer-events-none" />
+              <div className="absolute inset-0 bg-[#0a0a0e]/30 group-hover:bg-transparent transition-colors duration-500 z-10 pointer-events-none" />
+
+              {/* Content Box */}
+              <div className="relative z-20 flex flex-col gap-3 transform transition-transform duration-500 ease-out group-hover:-translate-y-2">
+                <div className="w-10 h-10 rounded-full bg-obsidian/80 backdrop-blur-md border border-champagne/30 flex items-center justify-center mb-2 shadow-[0_0_15px_rgba(201,168,76,0.15)] group-hover:border-champagne group-hover:shadow-[0_0_20px_rgba(201,168,76,0.3)] transition-all duration-500">
+                  <span className="font-mono text-xs text-champagne scale-110">{s.n}</span>
+                </div>
+                <h3 className="font-bold text-ivory/90 text-2xl tracking-tight">{s.t}</h3>
+                <p className="text-ivory/50 text-sm leading-relaxed">{s.d}</p>
+              </div>
             </div>
           ))}
         </div>

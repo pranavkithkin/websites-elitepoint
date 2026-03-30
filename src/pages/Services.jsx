@@ -41,19 +41,32 @@ export default function Services() {
           {servicesList.map((srv, idx) => (
             <div 
               key={idx} 
-              className="service-card group relative p-8 rounded-[2rem] bg-slate/30 border border-white/5 overflow-hidden transition-all duration-300 hover:scale-[1.02] hover:bg-slate/80 hover:border-champagne/30 hover:shadow-[0_10px_30px_rgba(201,168,76,0.1)] opacity-0 animate-fade-up"
+              className="service-card group relative p-8 rounded-[2rem] bg-[#0A0A14] border border-white/5 overflow-hidden transition-all duration-500 hover:scale-[1.02] hover:border-champagne/30 hover:shadow-[0_10px_30px_rgba(201,168,76,0.15)] opacity-0 animate-fade-up min-h-[280px]"
               style={{ animationDelay: `${idx * 0.05 + 0.2}s` }}
             >
-              {/* Magnetic Hover Span */}
-              <div className="absolute inset-0 bg-gradient-to-br from-champagne/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+              {/* Dynamic Background Image */}
+              <div className="absolute inset-0 transition-transform duration-[1.5s] ease-out group-hover:scale-110">
+                <img 
+                  src={`/Services/${idx + 1}.png`} 
+                  alt={srv.title}
+                  className={`w-full h-full object-cover object-center opacity-40 mix-blend-screen group-hover:opacity-70 transition-opacity duration-500 transform ${idx >= 9 ? 'scale-[1.7]' : 'scale-100'}`}
+                  onError={(e) => { e.target.style.display = 'none'; }} 
+                />
+              </div>
+
+              {/* Gradient Overlay for text readability */}
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A14] via-[#0A0A14]/80 to-transparent z-10 pointer-events-none" />
+              <div className="absolute inset-0 bg-champagne/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 pointer-events-none" />
               
-              <div className="relative z-10 flex flex-col h-full">
+              <div className="relative z-20 flex flex-col h-full transform transition-transform duration-500 ease-out group-hover:-translate-y-2">
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="w-8 h-8 rounded-full bg-champagne/10 flex items-center justify-center text-champagne font-mono text-xs font-bold border border-champagne/20">
-                    {idx + 1 < 10 ? `0${idx + 1}` : idx + 1}
+                  <div className="w-10 h-10 rounded-full bg-obsidian border border-champagne/30 flex items-center justify-center shadow-[0_0_10px_rgba(201,168,76,0.05)] group-hover:border-champagne group-hover:shadow-[0_0_15px_rgba(201,168,76,0.2)] transition-all duration-500">
+                    <span className="font-mono text-xs font-bold text-champagne">
+                      {idx + 1 < 10 ? `0${idx + 1}` : idx + 1}
+                    </span>
                   </div>
                 </div>
-                <h4 className="font-bold text-xl text-ivory mb-2 leading-tight">{srv.title}</h4>
+                <h4 className="font-bold text-xl text-ivory/90 mb-3 leading-tight tracking-tight">{srv.title}</h4>
                 <p className="text-sm text-ivory/60 leading-relaxed mt-auto">
                   {srv.desc}
                 </p>
