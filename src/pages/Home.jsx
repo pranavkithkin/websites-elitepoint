@@ -3,6 +3,7 @@ import Hero from '../components/Hero';
 
 // Lazy load all below-fold sections — they won't download until needed
 const StatsBelt    = lazy(() => import('../components/HomeSections').then(m => ({ default: m.StatsBelt })));
+const FeaturedServices = lazy(() => import('../components/HomeSections').then(m => ({ default: m.FeaturedServices })));
 const WhyUs        = lazy(() => import('../components/HomeSections').then(m => ({ default: m.WhyUs })));
 const Jurisdictions = lazy(() => import('../components/HomeSections').then(m => ({ default: m.Jurisdictions })));
 const ProcessStrip = lazy(() => import('../components/HomeSections').then(m => ({ default: m.ProcessStrip })));
@@ -21,6 +22,9 @@ export default function Home() {
       {/* Everything below the fold is lazy */}
       <Suspense fallback={<Placeholder />}>
         <StatsBelt />
+      </Suspense>
+      <Suspense fallback={<Placeholder />}>
+        <FeaturedServices />
       </Suspense>
       <Suspense fallback={<Placeholder />}>
         <WhyUs />

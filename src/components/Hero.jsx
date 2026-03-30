@@ -55,9 +55,9 @@ export default function Hero() {
         <div className="absolute inset-0 bg-obsidian/40 mix-blend-multiply"></div>
       </div>
 
-      <div ref={textRef} className="relative z-10 w-full max-w-5xl mx-auto flex flex-col items-start gap-4">
+      <div ref={textRef} className="relative z-10 w-full max-w-5xl mx-auto px-5 lg:px-6 flex flex-col items-start gap-4">
         <h1 className="flex flex-col gap-1 tracking-tight">
-          <span className="hero-element font-sans font-bold text-2xl md:text-5xl lg:text-6xl uppercase tracking-tighter text-ivory/90">
+          <span className="hero-element font-sans font-bold text-2xl md:text-5xl lg:text-6xl uppercase tracking-tighter text-ivory/90 ml-1">
             Precision structuring meets
           </span>
           <span className="hero-element font-serif italic text-5xl md:text-8xl lg:text-[140px] leading-[0.85] text-champagne pr-4">

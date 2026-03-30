@@ -268,7 +268,7 @@ function WhyUs() {
   const pillars = [
     { icon: '⚡', t: '7-Day Turnaround', d: 'Most formations completed in as little as 7 business days from document submission.' },
     { icon: '🔒', t: 'Zero Hidden Fees', d: 'Full cost breakdown in writing before we start. No surprises, ever.' },
-    { icon: '🌐', t: '40+ Govt. Authorities', d: 'Active relationships with DED, MOHRE, ICA, and all major free zone authorities.' },
+    { icon: '🌐', t: '40+ Govt. Authorities', d: 'Active relationships with DED, MOHRE, ICP, Amer, and all major free zone authorities.' },
     { icon: '🤝', t: 'Dedicated Manager', d: 'One point of contact from consultation to operational status.' },
   ];
 
@@ -301,4 +301,87 @@ function WhyUs() {
   );
 }
 
-export { StatsBelt, Jurisdictions, ProcessStrip, Testimonials, WhyUs };
+// ── FEATURED SERVICES ─────────────────────────────────────────────────────────
+function FeaturedServices() {
+  const ref = useRef(null);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.from('.feat-srv-card', {
+        y: 60,
+        duration: 0.8,
+        stagger: 0.15,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: ref.current,
+          start: 'top 85%',
+        }
+      });
+    }, ref);
+    return () => ctx.revert();
+  }, []);
+
+  const featured = [
+    { title: 'Business Setup', desc: 'Comprehensive entity establishment tailored to your scaling needs.', img: '/Services/1.png' },
+    { title: 'Golden Visa Services', desc: 'Fast-tracked, premium residency solutions for investors and talent.', img: '/Services/4.png' },
+    { title: 'Trade License (LLC, Freezone & Offshore)', desc: 'Full-spectrum licensing acquisition across all UAE jurisdictions.', img: '/Services/2.png' },
+    { title: 'Immigration & Visa', desc: 'End-to-end processing for employment, family, and investor visas.', img: '/Services/5.png' }
+  ];
+
+  return (
+    <section ref={ref} className="py-24 px-6 md:px-16 bg-obsidian relative z-10 border-t border-white/5">
+      <div className="max-w-[1400px] mx-auto">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+          <div>
+            <p className="text-[10px] font-mono text-champagne/80 uppercase tracking-widest mb-4">Core Solutions</p>
+            <h2 className="text-4xl md:text-5xl font-sans tracking-tight text-ivory">Featured Services</h2>
+          </div>
+          <a href="/services" className="group flex items-center gap-3 text-champagne font-bold text-sm tracking-wide uppercase hover:text-ivory transition-colors">
+            View All Services
+            <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </a>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {featured.map((srv, idx) => (
+            <a 
+              href="/services"
+              key={idx} 
+              className="feat-srv-card group relative p-8 rounded-[2rem] bg-[#0A0A14] border border-white/5 overflow-hidden transition-all duration-500 hover:scale-[1.02] hover:border-champagne/30 hover:shadow-[0_10px_30px_rgba(201,168,76,0.15)] min-h-[320px] flex flex-col justify-end isolate"
+            >
+              {/* Dynamic Background Image */}
+              <div className="absolute inset-0 transition-transform duration-[1.5s] ease-out group-hover:scale-110 pointer-events-none">
+                <img 
+                  src={srv.img} 
+                  alt={srv.title}
+                  className="w-full h-full object-cover object-center opacity-30 mix-blend-screen group-hover:opacity-60 transition-opacity duration-500"
+                  onError={(e) => { e.target.style.display = 'none'; }} 
+                />
+              </div>
+
+              {/* Gradient Overlay for text readability */}
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A14] via-[#0A0A14]/90 to-transparent z-10 pointer-events-none" />
+              <div className="absolute inset-0 bg-champagne/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 pointer-events-none" />
+              
+              <div className="relative z-20 flex flex-col h-full transform transition-transform duration-500 ease-out group-hover:-translate-y-2">
+                <div className="w-10 h-10 rounded-full bg-obsidian border border-champagne/30 flex items-center justify-center mb-4 shadow-[0_0_10px_rgba(201,168,76,0.05)] group-hover:border-champagne transition-all duration-500">
+                  <span className="font-mono text-xs font-bold text-champagne">
+                    0{idx + 1}
+                  </span>
+                </div>
+                <h4 className="font-bold text-xl text-ivory/90 mb-3 leading-tight tracking-tight">{srv.title}</h4>
+                <p className="text-sm text-ivory/60 leading-relaxed mt-auto">
+                  {srv.desc}
+                </p>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export { StatsBelt, FeaturedServices, Jurisdictions, ProcessStrip, Testimonials, WhyUs };
