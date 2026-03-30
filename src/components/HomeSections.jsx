@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import LogoLoop from './LogoLoop';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -45,10 +46,10 @@ function Counter({ target, suffix = '', prefix = '' }) {
 // ── STATS BELT ────────────────────────────────────────────────────────────────
 function StatsBelt() {
   const stats = [
-    { value: 200000, suffix: '+', label: 'New Licenses Issued in UAE 2024', prefix: '' },
-    { value: 30, suffix: '%', label: 'Freezone Registration Growth YoY', prefix: '+' },
-    { value: 1, suffix: 'M+', label: 'Active Commercial Licenses in UAE', prefix: '' },
-    { value: 8.1, suffix: 'B', label: 'Consulting Market by 2033 (USD)', prefix: '$' },
+    { value: 1000, suffix: '+', label: 'Licenses Issued in UAE', prefix: '' },
+    { value: 20, suffix: '+', label: 'Freezones & Jurisdictions Covered', prefix: '' },
+    { value: 1000, suffix: '+', label: 'Active Commercial Licenses', prefix: '' },
+    { value: 99, suffix: '%', label: 'Application Success & Approval Rate', prefix: '' },
   ];
 
   return (
@@ -74,44 +75,66 @@ function StatsBelt() {
 // ── JURISDICTIONS ─────────────────────────────────────────────────────────────
 function Jurisdictions() {
   const zones = [
-    { name: 'Dubai Mainland', desc: 'DED licensed, full market access', tag: 'DED' },
-    { name: 'DIFC', desc: 'Financial district, international law', tag: 'DIFC' },
-    { name: 'JAFZA', desc: 'Jebel Ali Free Zone, trade & logistics', tag: 'FZ' },
-    { name: 'RAKEZ', desc: 'RAK — flexible, cost-effective setups', tag: 'RAKEZ' },
-    { name: 'DMCC', desc: 'Commodities & global trade hub', tag: 'DMCC' },
-    { name: 'Ajman Offshore', desc: 'Asset protection, full ownership', tag: 'OFF' },
+    { name: 'Dubai Mainland', desc: 'DED licensed, full market access', tag: 'DED', logo: '/Authorities/Dubai.png' },
+    { name: 'DIFC', desc: 'Financial district, international law', tag: 'DIFC', logo: '/Authorities/DIFC.png' },
+    { name: 'JAFZA', desc: 'Jebel Ali Free Zone, trade & logistics', tag: 'FZ', logo: '/Authorities/Jafza.png' },
+    { name: 'RAKEZ', desc: 'RAK — flexible, cost-effective setups', tag: 'RAKEZ', logo: '/Authorities/rakez.png' },
+    { name: 'DMCC', desc: 'Commodities & global trade hub', tag: 'DMCC', logo: '/Authorities/DMCC .png' },
+    { name: 'Ajman Offshore', desc: 'Asset protection, full ownership', tag: 'OFF', logo: '/Authorities/ajman freezone.png' },
   ];
 
-  return (
-    <section className="py-32 px-6 md:px-16 bg-obsidian relative z-10">
-      <div className="max-w-6xl mx-auto">
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
-          <div>
-            <p className="text-xs font-mono text-champagne uppercase tracking-widest mb-3">Jurisdictions We Cover</p>
-            <h2 className="text-4xl md:text-5xl font-sans tracking-tight text-ivory">Set up anywhere <br className="hidden md:block" />
-              <span className="font-serif italic text-champagne">in the UAE.</span>
-            </h2>
-          </div>
-          <p className="text-ivory/50 text-sm max-w-sm leading-relaxed">
-            We are registered and active across every major UAE free zone and mainland authority — giving you the widest possible licensing footprint.
-          </p>
+  const logoItems = zones.map((z, i) => ({
+    node: (
+      <div className="group relative p-8 w-[340px] md:w-[380px] h-full rounded-[2rem] border border-white/5 bg-[#0e0e12] hover:bg-[#121216] transition-all duration-300 cursor-default overflow-hidden flex flex-col justify-between">
+        <div className="absolute top-6 right-6 text-[10px] font-mono text-champagne/40 border border-champagne/10 px-2 flex items-center h-6 rounded-full uppercase tracking-wider">{z.tag}</div>
+        
+        {/* Authority Logo taking up the prominent center space */}
+        <div className="flex-1 w-full flex items-center justify-start mt-6 mb-2 opacity-60 group-hover:opacity-100 transition-opacity duration-300 ease-in-out">
+           <img 
+               src={z.logo} 
+               alt={`${z.name} Logo`} 
+               className="w-[85%] max-h-[100px] object-contain object-left filter brightness-0 invert origin-left transform scale-125 md:scale-150 ml-4 md:ml-6"
+           />
         </div>
+        
+        <div className="mt-auto">
+          <h3 className="font-bold text-ivory/90 text-lg tracking-wide mb-2">{z.name}</h3>
+          <p className="text-ivory/40 text-sm leading-relaxed">{z.desc}</p>
+        </div>
+      </div>
+    ),
+    title: z.name
+  }));
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          {zones.map((z, i) => (
-            <div
-              key={i}
-              className="group relative p-7 rounded-[1.75rem] border border-white/5 bg-slate/20 hover:bg-slate/50 hover:border-champagne/20 transition-all duration-300 cursor-default overflow-hidden"
-            >
-              <div className="absolute top-5 right-5 text-[10px] font-mono text-champagne/60 border border-champagne/20 px-2 py-0.5 rounded-full">{z.tag}</div>
-              <div className="w-8 h-8 rounded-xl bg-champagne/10 flex items-center justify-center mb-5">
-                <div className="w-2 h-2 rounded-full bg-champagne" />
-              </div>
-              <h3 className="font-bold text-ivory text-lg mb-2">{z.name}</h3>
-              <p className="text-ivory/50 text-sm leading-relaxed">{z.desc}</p>
-            </div>
-          ))}
+  return (
+    <section className="py-28 bg-[#0a0a0e] relative z-10 overflow-hidden">
+      <div className="max-w-[1400px] mx-auto px-6 md:px-16 mb-16">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
+          <div>
+            <p className="text-[10px] font-mono text-champagne/80 uppercase tracking-widest mb-4">JURISDICTIONS WE COVER</p>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-sans tracking-tight text-ivory/90 mb-1">Set up anywhere</h2>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif italic text-champagne leading-tight">in the UAE.</h2>
+          </div>
+          <div className="md:w-1/3 md:pb-2">
+            <p className="text-ivory/40 text-[15px] leading-relaxed">
+              We are registered and active across every major UAE free zone and mainland authority — giving you the widest possible licensing footprint.
+            </p>
+          </div>
         </div>
+      </div>
+
+      <div className="w-full">
+        <LogoLoop
+          logos={logoItems}
+          speed={35}
+          direction="left"
+          gap={20}
+          logoHeight={200}
+          hoverSpeed={10}
+          fadeOut={true}
+          fadeOutColor="#0a0a0e"
+          ariaLabel="Jurisdictions We Cover"
+        />
       </div>
     </section>
   );

@@ -5,6 +5,7 @@ import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import Lenis from '@studio-freight/lenis';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import WhatsAppCTA from './components/WhatsAppCTA';
 import Home from './pages/Home';
 import Services from './pages/Services';
 import About from './pages/About';
@@ -76,13 +77,14 @@ function Layout({ children }) {
   }, [children]);
 
   return (
-    <div ref={appRef} className="bg-obsidian min-h-screen text-ivory font-sans flex flex-col">
+    <div ref={appRef} className="bg-obsidian min-h-screen text-ivory font-sans flex flex-col relative w-full overflow-x-hidden">
       <ScrollToTop />
       <Navbar />
       <main className="flex-1">
         {children}
       </main>
       <Footer />
+      <WhatsAppCTA />
     </div>
   );
 }
