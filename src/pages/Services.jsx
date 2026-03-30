@@ -47,8 +47,9 @@ export default function Services() {
               {/* Dynamic Background Image */}
               <div className="absolute inset-0 transition-transform duration-[1.5s] ease-out group-hover:scale-110">
                 <img 
-                  src={`/Services/${idx + 1}.png`} 
+                  src={`/Services/${idx + 1}.jpg`} 
                   alt={srv.title}
+                  loading="lazy"
                   className={`w-full h-full object-cover object-center opacity-40 mix-blend-screen group-hover:opacity-70 transition-opacity duration-500 transform ${idx >= 9 ? 'scale-[1.7]' : 'scale-100'}`}
                   onError={(e) => { e.target.style.display = 'none'; }} 
                 />
