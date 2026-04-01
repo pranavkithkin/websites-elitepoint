@@ -6,10 +6,10 @@ export default function Footer() {
   return (
     <footer className="bg-[#0a0a0d] rounded-t-[4rem] text-ivory/80 pt-20 pb-10 px-6 md:px-16 relative z-20 shadow-[0_-10px_40px_rgba(0,0,0,0.5)]">
       <div className="max-w-6xl mx-auto flex flex-col gap-16">
-        
+
         {/* Top Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
-          
+
           {/* Brand Col */}
           <div className="md:col-span-2 lg:col-span-2 flex flex-col items-start gap-6">
             <Link to="/" className="flex items-center gap-3">
@@ -22,7 +22,7 @@ export default function Footer() {
             <p className="max-w-sm text-sm text-ivory/60 leading-relaxed">
               Precision structuring meets absolute compliance. We build the architecture that powers global enterprise scaling.
             </p>
-            
+
             {/* Live Indicator */}
             <div className="flex items-center gap-2 mt-4 px-4 py-2 rounded-full border border-green-500/20 bg-green-500/5">
               <span className="relative flex h-2 w-2">
@@ -56,17 +56,17 @@ export default function Footer() {
               <Mail className="h-4 w-4 text-champagne shrink-0" />
               info@elitepointcs.com
             </a>
-            <a href="tel:0559949237" className="hover:text-champagne transition-colors flex items-center gap-3">
-              <Phone className="h-4 w-4 text-champagne shrink-0" />
-              055 994 9237
-            </a>
             <a href="tel:0559960551" className="hover:text-champagne transition-colors flex items-center gap-3">
               <Phone className="h-4 w-4 text-champagne shrink-0" />
               055 996 0551
             </a>
+            <a href="tel:0559949237" className="hover:text-champagne transition-colors flex items-center gap-3">
+              <Phone className="h-4 w-4 text-champagne shrink-0" />
+              055 994 9237
+            </a>
             <div className="hover:text-champagne transition-colors cursor-default text-ivory/60 flex items-start gap-3 mt-1 leading-relaxed">
               <MapPin className="h-4 w-4 text-champagne mt-0.5 shrink-0" />
-              <span>Shop No. 01, Office No. 45, Ground Floor<br/>Reem Residency, Aaditya Business Center,<br/>Karama, Dubai, UAE</span>
+              <span>Shop No. 01, Office No. 45, Ground Floor<br />Reem Residency, Aaditya Business Center,<br />Karama, Dubai, UAE</span>
             </div>
           </div>
         </div>
