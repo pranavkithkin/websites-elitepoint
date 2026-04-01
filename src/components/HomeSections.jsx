@@ -181,13 +181,14 @@ function ProcessStrip() {
                 <img 
                   src={s.img} 
                   alt={s.t}
-                  className="w-full h-full object-cover object-center opacity-80 group-hover:opacity-100 transition-opacity duration-500"
+                  loading="lazy"
+                  className="w-full h-full object-cover object-center opacity-90 group-hover:opacity-100 transition-opacity duration-500"
                 />
               </div>
               
               {/* Gradient Overlay to ensure text readability */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0e] via-[#0a0a0e]/80 to-transparent z-10 pointer-events-none" />
-              <div className="absolute inset-0 bg-[#0a0a0e]/30 group-hover:bg-transparent transition-colors duration-500 z-10 pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0e] via-[#0a0a0e]/40 to-transparent z-10 pointer-events-none" />
+              <div className="absolute inset-0 bg-[#0a0a0e]/10 group-hover:bg-transparent transition-colors duration-500 z-10 pointer-events-none" />
 
               {/* Content Box */}
               <div className="relative z-20 flex flex-col gap-3 transform transition-transform duration-500 ease-out group-hover:-translate-y-2">
@@ -322,10 +323,10 @@ function FeaturedServices() {
   }, []);
 
   const featured = [
-    { title: 'Business Setup', desc: 'Comprehensive entity establishment tailored to your scaling needs.', img: '/Services/1.png' },
-    { title: 'Golden Visa Services', desc: 'Fast-tracked, premium residency solutions for investors and talent.', img: '/Services/4.png' },
-    { title: 'Trade License (LLC, Freezone & Offshore)', desc: 'Full-spectrum licensing acquisition across all UAE jurisdictions.', img: '/Services/2.png' },
-    { title: 'Immigration & Visa', desc: 'End-to-end processing for employment, family, and investor visas.', img: '/Services/5.png' }
+    { title: 'Business Setup', desc: 'Comprehensive entity establishment tailored to your scaling needs.', img: '/Services/1.jpg' },
+    { title: 'Golden Visa Services', desc: 'Fast-tracked, premium residency solutions for investors and talent.', img: '/Services/4.jpg' },
+    { title: 'Trade License (LLC, Freezone & Offshore)', desc: 'Full-spectrum licensing acquisition across all UAE jurisdictions.', img: '/Services/2.jpg' },
+    { title: 'Immigration & Visa', desc: 'End-to-end processing for employment, family, and investor visas.', img: '/Services/5.jpg' }
   ];
 
   return (
@@ -356,13 +357,14 @@ function FeaturedServices() {
                 <img 
                   src={srv.img} 
                   alt={srv.title}
-                  className="w-full h-full object-cover object-center opacity-30 mix-blend-screen group-hover:opacity-60 transition-opacity duration-500"
+                  loading="lazy"
+                  className="w-full h-full object-cover object-center opacity-50 mix-blend-screen group-hover:opacity-90 transition-opacity duration-500"
                   onError={(e) => { e.target.style.display = 'none'; }} 
                 />
               </div>
 
               {/* Gradient Overlay for text readability */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A14] via-[#0A0A14]/90 to-transparent z-10 pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A14] via-[#0A0A14]/60 to-transparent z-10 pointer-events-none" />
               <div className="absolute inset-0 bg-champagne/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 pointer-events-none" />
               
               <div className="relative z-20 flex flex-col h-full transform transition-transform duration-500 ease-out group-hover:-translate-y-2">
