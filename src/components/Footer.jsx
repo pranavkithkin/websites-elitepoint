@@ -52,13 +52,17 @@ export default function Footer() {
           {/* Contact Col */}
           <div className="flex flex-col items-start gap-4 text-sm mt-4 lg:mt-0">
             <h4 className="font-bold text-ivory mb-2 uppercase tracking-widest text-xs font-sans">Corporate Office</h4>
-            <a href="mailto:info@elitepoint.com" className="hover:text-champagne transition-colors flex items-center gap-3">
+            <a href="mailto:info@elitepointcs.com" className="hover:text-champagne transition-colors flex items-center gap-3">
               <Mail className="h-4 w-4 text-champagne shrink-0" />
-              info@elitepoint.com
+              info@elitepointcs.com
             </a>
-            <a href="tel:+971551741271" className="hover:text-champagne transition-colors flex items-center gap-3">
+            <a href="tel:0559949237" className="hover:text-champagne transition-colors flex items-center gap-3">
               <Phone className="h-4 w-4 text-champagne shrink-0" />
-              +971 55 174 1271
+              055 994 9237
+            </a>
+            <a href="tel:0559960551" className="hover:text-champagne transition-colors flex items-center gap-3">
+              <Phone className="h-4 w-4 text-champagne shrink-0" />
+              055 996 0551
             </a>
             <div className="hover:text-champagne transition-colors cursor-default text-ivory/60 flex items-start gap-3 mt-1 leading-relaxed">
               <MapPin className="h-4 w-4 text-champagne mt-0.5 shrink-0" />
