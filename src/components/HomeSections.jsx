@@ -327,7 +327,8 @@ function FeaturedServices() {
     { title: 'Golden Visa Services', desc: 'Fast-tracked, premium residency solutions for investors and talent.', img: '/Services/4.jpg' },
     { title: 'PRO Services', desc: 'Expert government liaison and swift document processing.', img: '/Services/12.jpg' },
     { title: 'Trade License (LLC, Freezone & Offshore)', desc: 'Full-spectrum licensing acquisition across all UAE jurisdictions.', img: '/Services/2.jpg' },
-    { title: 'Immigration & Visa', desc: 'End-to-end processing for employment, family, and investor visas.', img: '/Services/5.jpg' }
+    { title: 'Immigration & Visa', desc: 'End-to-end processing for employment, family, and investor visas.', img: '/Services/5.jpg' },
+    { title: 'Family Visa', desc: 'Seamless sponsorship and residency processing for your spouse and dependents.', img: '/Services/13.jpg' }
   ];
 
   return (

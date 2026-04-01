@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Mail, Phone, MapPin } from 'lucide-react';
 
 export default function Footer() {
   return (
@@ -7,10 +8,10 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto flex flex-col gap-16">
         
         {/* Top Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
           
           {/* Brand Col */}
-          <div className="md:col-span-2 flex flex-col items-start gap-6">
+          <div className="md:col-span-2 lg:col-span-2 flex flex-col items-start gap-6">
             <Link to="/" className="flex items-center gap-3">
               <img src="/logo.png" alt="Elite Point Logo" className="h-14 w-auto object-contain" />
               <div className="flex flex-col">
@@ -46,6 +47,23 @@ export default function Footer() {
             <a href="#" className="hover:text-champagne transition-colors">Privacy Protocol</a>
             <a href="#" className="hover:text-champagne transition-colors">Terms of Infrastructure</a>
             <a href="#" className="hover:text-champagne transition-colors">Compliance Map</a>
+          </div>
+
+          {/* Contact Col */}
+          <div className="flex flex-col items-start gap-4 text-sm mt-4 lg:mt-0">
+            <h4 className="font-bold text-ivory mb-2 uppercase tracking-widest text-xs font-sans">Corporate Office</h4>
+            <a href="mailto:info@elitepoint.com" className="hover:text-champagne transition-colors flex items-center gap-3">
+              <Mail className="h-4 w-4 text-champagne shrink-0" />
+              info@elitepoint.com
+            </a>
+            <a href="tel:+971551741271" className="hover:text-champagne transition-colors flex items-center gap-3">
+              <Phone className="h-4 w-4 text-champagne shrink-0" />
+              +971 55 174 1271
+            </a>
+            <div className="hover:text-champagne transition-colors cursor-default text-ivory/60 flex items-start gap-3 mt-1 leading-relaxed">
+              <MapPin className="h-4 w-4 text-champagne mt-0.5 shrink-0" />
+              <span>Shop No. 01, Office No. 45, Ground Floor<br/>Reem Residency, Aaditya Business Center,<br/>Karama, Dubai, UAE</span>
+            </div>
           </div>
         </div>
 

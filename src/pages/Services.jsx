@@ -18,6 +18,7 @@ export default function Services() {
     { title: 'Legal Translation', desc: 'Ministry of Justice-approved translation for official corporate documentation.' },
     { title: 'All Govt. Dept. Works', desc: 'Holistic liaison and clearance across all governmental bodies.' },
     { title: 'PRO Services', desc: 'Expert government liaison and swift document processing for all corporate needs.' },
+    { title: 'Family Visa', desc: 'Seamless sponsorship and residency processing for your spouse and dependents.' },
   ];
 
   // Using CSS animations (defined in index.css) to prevent React routing GSAP sticking bugs
