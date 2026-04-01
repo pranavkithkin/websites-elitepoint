@@ -325,6 +325,7 @@ function FeaturedServices() {
   const featured = [
     { title: 'Business Setup', desc: 'Comprehensive entity establishment tailored to your scaling needs.', img: '/Services/1.jpg' },
     { title: 'Golden Visa Services', desc: 'Fast-tracked, premium residency solutions for investors and talent.', img: '/Services/4.jpg' },
+    { title: 'PRO Services', desc: 'Expert government liaison and swift document processing.', img: '/Services/12.jpg' },
     { title: 'Trade License (LLC, Freezone & Offshore)', desc: 'Full-spectrum licensing acquisition across all UAE jurisdictions.', img: '/Services/2.jpg' },
     { title: 'Immigration & Visa', desc: 'End-to-end processing for employment, family, and investor visas.', img: '/Services/5.jpg' }
   ];
@@ -345,7 +346,7 @@ function FeaturedServices() {
           </a>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {featured.map((srv, idx) => (
             <a 
               href="/services"
